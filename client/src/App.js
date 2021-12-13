@@ -1,25 +1,33 @@
-import React from "react";
+import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import CssBaseline from '@mui/material/CssBaseline'
+import Container from '@mui/material/Container'
+import HorizontalLinearStepper from './components/HorizontalLinearStepper'
+import Home from './components/Home'
+import Finish from './components/Finish'
+import SeeYou from './components/SeeYou'
 
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, [])
-
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <CssBaseline />
+      <Container maxWidth="sm">
+      <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/finish">
+            <Finish />
+          </Route>
+          <Route path="/seeyou">
+            <SeeYou />
+          </Route>
+          <Route path="/survey">
+            <HorizontalLinearStepper style={{ height: '100vh' }} />
+          </Route>
+        </Switch>
+      </Container>
+    </BrowserRouter>
+  )
 }
-
-export default App;
