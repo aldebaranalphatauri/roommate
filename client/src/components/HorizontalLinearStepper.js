@@ -145,7 +145,7 @@ export default function HorizontalLinearStepper() {
           <AboutYou />
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
-            <Button href="/privacy" >Save</Button>
+            <Button href="/privacy" >Privacy</Button>
             <Button onClick={handleReset} >Reset</Button>
           </Box>
         </React.Fragment>

@@ -77,9 +77,11 @@ export default function Privacy() {
           }
           label="Accosento"
         />
-        <Button disabled={loading} href="/seeyou" >
-          Salva
-        </Button>
+        <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+            <Box sx={{ flex: '1 1 auto' }} />
+            <Button disabled={loading} href="/seeyou" >Salva</Button>
+            <Button href="https://mui.com/" >Non proseguire </Button>
+          </Box>
       </Box>
     </div>
   )
