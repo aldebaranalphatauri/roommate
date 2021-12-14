@@ -1,48 +1,86 @@
-<h1>Disclaimer</h1>
-<p>Last updated: December 12, 2021</p>
-<h1>Interpretation and Definitions</h1>
-<h2>Interpretation</h2>
-<p>The words of which the initial letter is capitalized have meanings defined under the following conditions.
-The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-<h2>Definitions</h2>
-<p>For the purposes of this Disclaimer:</p>
-<ul>
-<li><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Disclaimer) refers to Find Room Mate.</li>
-<li><strong>Service</strong> refers to the Website.</li>
-<li><strong>You</strong> means the individual accessing the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
-<li><strong>Website</strong> refers to Find Room Mate, accessible from <a href="https://www.roommate.com" rel="external nofollow noopener" target="_blank">https://www.roommate.com</a></li>
-</ul>
-<h1>Disclaimer</h1>
-<p>The information contained on the Service is for general information purposes only.</p>
-<p>The Company assumes no responsibility for errors or omissions in the contents of the Service.</p>
-<p>In no event shall the Company be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. The Company reserves the right to make additions, deletions, or modifications to the contents on the Service at any time without prior notice. This Disclaimer has been created with the help of the <a href="https://www.termsfeed.com/blog/sample-disclaimer-template/" target="_blank">Disclaimer Template</a>.</p>
-<p>The Company does not warrant that the Service is free of viruses or other harmful components.</p>
-<h1>External Links Disclaimer</h1>
-<p>The Service may contain links to external websites that are not provided or maintained by or in any way affiliated with the Company.</p>
-<p>Please note that the Company does not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites.</p>
-<h1>Errors and Omissions Disclaimer</h1>
-<p>The information given by the Service is for general guidance on matters of interest only. Even if the Company takes every precaution to insure that the content of the Service is both current and accurate, errors can occur. Plus, given the changing nature of laws, rules and regulations, there may be delays, omissions or inaccuracies in the information contained on the Service.</p>
-<p>The Company is not responsible for any errors or omissions, or for the results obtained from the use of this information.</p>
-<h1>Fair Use Disclaimer</h1>
-<p>The Company may use copyrighted material which has not always been specifically authorized by the copyright owner. The Company is making such material available for criticism, comment, news reporting, teaching, scholarship, or research.</p>
-<p>The Company believes this constitutes a &quot;fair use&quot; of any such copyrighted material as provided for in section 107 of the United States Copyright law.</p>
-<p>If You wish to use copyrighted material from the Service for your own purposes that go beyond fair use, You must obtain permission from the copyright owner.</p>
-<h1>Views Expressed Disclaimer</h1>
-<p>The Service may contain views and opinions which are those of the authors and do not necessarily reflect the official policy or position of any other author, agency, organization, employer or company, including the Company.</p>
-<p>Comments published by users are their sole responsibility and the users will take full responsibility, liability and blame for any libel or litigation that results from something written in or as a direct result of something written in a comment. The Company is not liable for any comment published by users and reserves the right to delete any comment for any reason whatsoever.</p>
-<h1>No Responsibility Disclaimer</h1>
-<p>The information on the Service is provided with the understanding that the Company is not herein engaged in rendering legal, accounting, tax, or other professional advice and services. As such, it should not be used as a substitute for consultation with professional accounting, tax, legal or other competent advisers.</p>
-<p>In no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever arising out of or in connection with your access or use or inability to access or use the Service.</p>
-<h1>&quot;Use at Your Own Risk&quot; Disclaimer</h1>
-<p>All information in the Service is provided &quot;as is&quot;, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability and fitness for a particular purpose.</p>
-<p>The Company will not be liable to You or anyone else for any decision made or action taken in reliance on the information given by the Service or for any consequential, special or similar damages, even if advised of the possibility of such damages.</p>
-<h1>Contact Us</h1>
-<p>If you have any questions about this Disclaimer, You can contact Us:</p>
-<ul>
-<li>
-<p>By email: info@roommate.com</p>
-</li>
-<li>
-<p>By visiting this page on our website: <a href="https://www.roommate.com/contact" rel="external nofollow noopener" target="_blank">https://www.roommate.com/contact</a></p>
-</li>
-</ul>
+import * as React from 'react';
+import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+
+export default function Privacy() {
+  const [loading, setLoading] = React.useState(true)
+
+  return (
+    <div>
+      <Typography variant="h5" gutterBottom component="p">
+        INFORMATIVA AI SENSI DEL REGOLAMENTO UE 2016/679 SULLA PROTEZIONE DEI DATI
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        In ottemperanza agli adempimenti richiesti dagli art. 13 e 14 del Regolamento UE 2016/679
+        per la protezione dei dati personali le comunichiamo le modalità di raccolta ed utilizzo
+        dei dati di Roommate
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Finalità della raccolta dati: I dati personali, comuni e dove richiesti “particolari”,
+        sono raccolti per la gestione organizzativa, amministrativa del servizio socio-assistenziale
+        da lei richiesto. Sono inseriti nel nostro sistema informativo e vengono trattati da personale autorizzato.
+        Il loro trattamento è legittimo e verrà fatto in modo trasparente e responsabile.
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Obbligatorietà e trattamenti previsti. Il conferimento dei suoi dati personali
+        è obbligatorio. Una sua eventuale rinuncia al conferimento dei dati, renderebbe
+        impossibile la gestione delle procedure organizzative, amministrative
+        e fiscali del servizio da lei richiesto.
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Soggetti a cui verranno comunicati i dati. I suoi dati personali non saranno
+        da noi diffusi; potranno essere comunicati ad eventuali enti pubblici,
+        come strutture sanitarie, solo qualora vi siano degli obblighi di legge,
+        od alle organizzazioni che collaborano con noi nella realizzazione del servizio richiesto.
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Periodo di conservazione, diffusione extra-UE. I suoi dati verranno
+        conservati per il periodo richiesto per l’erogazione del servizio
+        ed in ogni caso non superiore a 5 anni. I suoi dati non verranno diffusi
+        in paesi extra-Unione Europea.
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Altri trattamenti connessi alla finalità principale. I suoi dati di
+        reperibilità potranno altresì essere utilizzati da Roommate,
+        in quanto soggetto senza scopo di lucro, esclusivamente per informarla
+        sui nostri servizi ed iniziative sociali.
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Diritti della persona che conferisce i dati. Nella gestione dei suoi
+        dati personali si terrà conto dei suoi diritti (articoli da 15 a 22 del Regolamento 2016/679),
+        e cioè il diritto all’accesso, alla rettifica ed alla cancellazione
+        (diritto all’oblio), alla limitazione del trattamento, all ’opposizione
+        al trattamento, il diritto di proporre un reclamo al Garante Privacy.
+        Le richieste di applicazione dei suoi diritti vanno indirizzate
+        al titolare del trattamento, utilizzando i recapiti sotto-riportati.
+      </Typography>
+      <Typography variant="body1" gutterBottom component="p">
+        Titolare del trattamento e suoi recapiti.
+        Titolare del trattamento dei dati è Roommate, Via …………… – ………………. (…..);
+        Telefono ……………..; E-mail: ………………….
+      </Typography>
+      <Box sx={{ '& > button': { m: 1 } }}>
+        <FormControlLabel
+          sx={{
+            display: 'block',
+          }}
+          control={
+            <Switch
+              checked={loading}
+              onChange={() => setLoading(!loading)}
+              name="loading"
+              color="primary"
+            />
+          }
+          label="Accosento"
+        />
+        <Button disabled={loading} href="/seeyou" >
+          Salva
+        </Button>
+      </Box>
+    </div>
+  )
+}

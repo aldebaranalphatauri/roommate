@@ -8,6 +8,8 @@ import Home from './components/Home'
 import Finish from './components/Finish'
 import SeeYou from './components/SeeYou'
 import Results from './components/Results'
+import Privacy from './components/Privacy'
+
 
 const tech = async () => {
   try {
@@ -42,6 +44,9 @@ export default function App() {
           </Route>
           <Route path="/results">
             <Results style={{ height: '100vh' }} />
+          </Route>
+          <Route path="/privacy">
+            <Privacy style={{ height: '100vh' }} />
           </Route>
         </Switch>
       </Container>
