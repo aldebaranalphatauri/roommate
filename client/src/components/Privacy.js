@@ -69,7 +69,7 @@ export default function Privacy() {
           }}
           control={
             <Switch
-              checked={loading}
+              checked={!loading}
               onChange={() => setLoading(!loading)}
               name="loading"
               color="primary"
