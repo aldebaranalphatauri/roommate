@@ -14,7 +14,7 @@ const steps = [
   'Home', 
   'Lunch', 
   'Kitchen',
-  "I'm",
+  'Me',
   'Cleanliness',
   'Parties',
   'Space',
@@ -22,7 +22,7 @@ const steps = [
   'Evening',
   'Morning',
   'Habit',
-  '4-legged',
+  'Friends',
   'Plants',
   'Summer',
   'Winter',
@@ -39,14 +39,33 @@ const styles = {
   }
 };
 
+export const addMetric = async (name) => {
+  const obj = {
+    "metric": name
+  }
+  let response = await fetch("/api/addmetric", {
+    method: 'POST',
+    headers: {
+      'Accept': '*/*',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify( obj ),
+  });
+  if (!response.ok) {
+    throw new Error('HTTP error! status: ' + response.status)
+  } else {
+    return await response.json();
+  }
+}
+
 export default function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-  const [answers, setAnswers] = React.useState([].fill.call({ length: steps.length}, -1)); 
+  //const [answers, setAnswers] = React.useState([].fill.call({ length: steps.length}, -1)); 
+  const [answers, setAnswers] = React.useState({}); 
 
 
   const isStepOptional = (step) => {
-    //return step === 1;
     return false;
   };
 
@@ -55,6 +74,11 @@ export default function HorizontalLinearStepper() {
   };
 
   const handleNext = () => {
+    const name = steps[activeStep]
+    if (answers[name]) {
+      addMetric(name)
+    }
+
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
@@ -112,10 +136,11 @@ export default function HorizontalLinearStepper() {
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-          🏁 All steps completed - you&apos;re finished
+          🏁 Congratulations, you have finished!
           </Typography>
           <Typography sx={{ mt: 2, mb: 1 }}>
-          Do you mind to tell us something more about you?
+          Leave us these informations so we can reach out to you 
+          as soon as we are ready and we find the perfect roommate for you.
           </Typography>
           <AboutYou />
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
@@ -127,7 +152,7 @@ export default function HorizontalLinearStepper() {
       ) : (
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-          <CustomizedRatings activeStep={activeStep} answers={answers} setAnswers={setAnswers} />
+          <CustomizedRatings activeStep={activeStep} step={steps[activeStep]} answers={answers} setAnswers={setAnswers} />
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
               color="inherit"

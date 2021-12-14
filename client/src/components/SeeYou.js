@@ -9,6 +9,8 @@ import Grid from '@mui/material/Grid';
 import CameraIcon from '@mui/icons-material/Camera';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {addMetric} from './HorizontalLinearStepper'
+
 
 function Copyright(props) {
   return (
@@ -25,7 +27,20 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+const tech = async () => {
+  try {
+    await addMetric("mates")
+  } catch (e) {
+    console.log('There has been a problem: ' + e.message)
+    return
+  }
+}
+
 export default function SeeYou() {
+  React.useEffect(() => {
+    tech();
+  }, []);
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

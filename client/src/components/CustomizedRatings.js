@@ -34,7 +34,7 @@ const questions = [
   'Summer time: the heat and humidity',
   'In winter the cold',
   'Regarding alcohol',
-  'Regarding cigarttes',
+  'Regarding cigarettes',
 ];
 
 const before = [
@@ -58,7 +58,7 @@ const before = [
 ]
 
 const after = [
-  'spend hour in the kitchen',
+  'spend hours in the kitchen',
   'completely',
   'a dishwasher',
   'a messy person',
@@ -77,16 +77,18 @@ const after = [
   'I hate smoke',
 ]
 
-export default function CustomizedRatings( {activeStep, answers, setAnswers} ) {
+export default function CustomizedRatings( {activeStep, step, answers, setAnswers} ) {
   const [value, setValue] = React.useState(0);
 
   React.useEffect(() => {
-    setValue((answers[activeStep] === -1) ? 0 : answers[activeStep])
-  }, [answers, activeStep] );
+    let aw = answers;
+    aw[step] = (answers[step]) ? answers[step] : 0;
+    setValue(aw[step])
+  }, [answers, activeStep, step] );
 
   const setGlobal = (newValue) => {
     let aw = answers;
-    aw[activeStep] = newValue;
+    aw[step] = newValue;
     setAnswers(aw);
   }
 
